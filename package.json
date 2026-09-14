@@ -1,0 +1,36 @@
+{
+  "name": "test-at-orangehrm-automation",
+  "version": "1.0.0",
+  "description": "Senior QA Automation Framework - OrangeHRM Employee Lifecycle (Playwright + TypeScript)",
+  "scripts": {
+    "test": "playwright test",
+    "test:e2e": "playwright test tests/e2e --project=chromium",
+    "test:api": "playwright test tests/api --project=chromium",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report reports/html",
+    "perf": "k6 run k6/login-api.js && k6 run k6/employee-create-api.js",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf test-results reports/html playwright-report"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "qa-automation",
+    "orangehrm",
+    "TEST_AT"
+  ],
+  "author": "Senior QA Automation Engineer",
+  "license": "MIT",
+  "devDependencies": {
+    "@faker-js/faker": "^9.0.0",
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.0.0",
+    "dotenv": "^16.4.0",
+    "k6-html-reporter": "^1.0.5",
+    "typescript": "^5.6.0"
+  }
+}

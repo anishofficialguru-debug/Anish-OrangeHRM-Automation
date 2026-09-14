@@ -1,0 +1,28 @@
+<testsuites id="" name="" tests="5" failures="0" skipped="0" errors="0" time="53.246821000000004">
+<testsuite name="api\employee-api.spec.ts" timestamp="2026-09-14T17:20:35.373Z" hostname="chromium" tests="2" failures="0" skipped="0" time="9.403" errors="0">
+<testcase name="TEST_AT API Verification @api › TEST_AT_API_001 - Authenticated session can reach PIM employees endpoint" classname="api\employee-api.spec.ts" time="8.258">
+<system-out>
+<![CDATA[TEST_AT API response status: 200
+]]>
+</system-out>
+</testcase>
+<testcase name="TEST_AT API Verification @api › TEST_AT_API_002 - Unauthenticated request is rejected" classname="api\employee-api.spec.ts" time="1.145">
+</testcase>
+</testsuite>
+<testsuite name="e2e\employee-lifecycle.spec.ts" timestamp="2026-09-14T17:20:35.373Z" hostname="chromium" tests="3" failures="0" skipped="0" time="66.092" errors="0">
+<testcase name="TEST_AT Employee Lifecycle @e2e @regression › TEST_AT_001 - Complete employee lifecycle: create → update → verify → delete" classname="e2e\employee-lifecycle.spec.ts" time="50.937">
+<system-out>
+<![CDATA[TEST_AT Creating employee: Johnny Heller, EmpId=43764799
+TEST_AT After save URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/286
+TEST_AT After save URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/286
+TEST_AT Real empNumber: 286
+TEST_AT API status for employee search: 200
+]]>
+</system-out>
+</testcase>
+<testcase name="TEST_AT Employee Lifecycle @e2e @regression › TEST_AT_002 - Login with invalid credentials @smoke @negative" classname="e2e\employee-lifecycle.spec.ts" time="6.918">
+</testcase>
+<testcase name="TEST_AT Employee Lifecycle @e2e @regression › TEST_AT_003 - Successful Admin login @smoke" classname="e2e\employee-lifecycle.spec.ts" time="8.237">
+</testcase>
+</testsuite>
+</testsuites>

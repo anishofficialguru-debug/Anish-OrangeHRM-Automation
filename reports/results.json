@@ -1,0 +1,360 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\LENOVO\\OneDrive\\Documents\\Automation\\TEST_AT_OrangeHRM_Automation\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\LENOVO\\OneDrive\\Documents\\Automation\\TEST_AT_OrangeHRM_Automation\\playwright.config.ts",
+    "rootDir": "C:/Users/LENOVO/OneDrive/Documents/Automation/TEST_AT_OrangeHRM_Automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 5
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/LENOVO/OneDrive/Documents/Automation/TEST_AT_OrangeHRM_Automation/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/LENOVO/OneDrive/Documents/Automation/TEST_AT_OrangeHRM_Automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/html",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "reports/junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 8,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "api\\employee-api.spec.ts",
+      "file": "api/employee-api.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TEST_AT API Verification @api",
+          "file": "api/employee-api.spec.ts",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TEST_AT_API_001 - Authenticated session can reach PIM employees endpoint",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8258,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "TEST_AT API response status: 200\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-14T17:20:36.310Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cc60899f2446eedfa20c-b0bdc3c306da7a062666",
+              "file": "api/employee-api.spec.ts",
+              "line": 9,
+              "column": 7
+            },
+            {
+              "title": "TEST_AT_API_002 - Unauthenticated request is rejected",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1145,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-14T17:20:36.301Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cc60899f2446eedfa20c-f48f6581976b1a67906e",
+              "file": "api/employee-api.spec.ts",
+              "line": 32,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "e2e\\employee-lifecycle.spec.ts",
+      "file": "e2e/employee-lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TEST_AT Employee Lifecycle @e2e @regression",
+          "file": "e2e/employee-lifecycle.spec.ts",
+          "line": 19,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TEST_AT_001 - Complete employee lifecycle: create → update → verify → delete",
+              "ok": true,
+              "tags": [
+                "e2e",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 50937,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "TEST_AT Creating employee: Johnny Heller, EmpId=43764799\n"
+                        },
+                        {
+                          "text": "TEST_AT After save URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/286\n"
+                        },
+                        {
+                          "text": "TEST_AT After save URL: https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/286\n"
+                        },
+                        {
+                          "text": "TEST_AT Real empNumber: 286\n"
+                        },
+                        {
+                          "text": "TEST_AT API status for employee search: 200\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Login as Admin",
+                          "duration": 7556
+                        },
+                        {
+                          "title": "Create new employee",
+                          "duration": 13788
+                        },
+                        {
+                          "title": "Validate Admin can see and manage the employee",
+                          "duration": 4851
+                        },
+                        {
+                          "title": "Update employee details",
+                          "duration": 4163
+                        },
+                        {
+                          "title": "API-level verification of employee",
+                          "duration": 1674
+                        },
+                        {
+                          "title": "Delete the employee",
+                          "duration": 16833
+                        },
+                        {
+                          "title": "Logout",
+                          "duration": 1389
+                        }
+                      ],
+                      "startTime": "2026-09-14T17:20:36.904Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e0b78a095d1464f80a9-c7889862da2e6fd915a8",
+              "file": "e2e/employee-lifecycle.spec.ts",
+              "line": 20,
+              "column": 7
+            },
+            {
+              "title": "TEST_AT_002 - Login with invalid credentials @smoke @negative",
+              "ok": true,
+              "tags": [
+                "e2e",
+                "regression",
+                "smoke",
+                "negative"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 6918,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-14T17:20:36.965Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e0b78a095d1464f80a9-202df783d78ce38c5f59",
+              "file": "e2e/employee-lifecycle.spec.ts",
+              "line": 99,
+              "column": 7
+            },
+            {
+              "title": "TEST_AT_003 - Successful Admin login @smoke",
+              "ok": true,
+              "tags": [
+                "e2e",
+                "regression",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 8237,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-14T17:20:37.028Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e0b78a095d1464f80a9-85f3a51b51a9ab7443a4",
+              "file": "e2e/employee-lifecycle.spec.ts",
+              "line": 106,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-14T17:20:35.161Z",
+    "duration": 53246.821,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

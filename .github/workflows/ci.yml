@@ -1,0 +1,79 @@
+name: TEST_AT OrangeHRM CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  schedule:
+    # Nightly run at 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Playwright Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1/4, 2/4, 3/4, 4/4]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --with-deps
+
+      - name: Run Playwright tests (sharded)
+        run: npx playwright test --shard=${{ matrix.shard }}
+        env:
+          TEST_ENV: demo
+          CI: true
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-shard-${{ matrix.shard }}
+          path: reports/html
+          retention-days: 14
+
+      - name: Upload test results & artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-shard-${{ matrix.shard }}
+          path: |
+            test-results/
+            reports/results.json
+            reports/junit.xml
+          retention-days: 14
+
+  # Optional: merge reports (simplified - each shard uploads its own)
+  notify:
+    name: Pipeline Status
+    needs: test
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Check result
+        run: |
+          if [ "${{ needs.test.result }}" == "success" ]; then
+            echo "✅ TEST_AT pipeline passed"
+          else
+            echo "❌ TEST_AT pipeline failed"
+            exit 1
+          fi

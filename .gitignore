@@ -1,0 +1,14 @@
+node_modules/
+dist/
+test-results/
+reports/html/
+playwright-report/
+.playwright/
+*.log
+.env
+.env.local
+.DS_Store
+coverage/
+.idea/
+.vscode/
+*.trace.zip
